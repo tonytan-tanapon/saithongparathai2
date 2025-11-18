@@ -1,0 +1,656 @@
+/* ===========================
+   GLOBAL
+=========================== */
+:root {
+  --nav-height: 120px;
+}
+
+section {
+  scroll-margin-top: var(--nav-height);
+}
+
+body {
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+  background: #ffe8df;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #ffe8df;
+}
+
+.nav-capsule {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  border: 2px solid #d8c5b6;
+  border-radius: 50px;
+  padding: 10px 20px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  margin-right: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #8e2a15;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-menu a.active {
+  font-weight: 700;
+  color: #6c1a0a;
+}
+
+.nav-btn {
+  background: linear-gradient(90deg, #d55c2d, #a6311b);
+  border: none;
+  width: 90px;
+  height: 42px;
+  border-radius: 50px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================
+   HERO TEXT
+=========================== */
+.hero-text {
+  text-align: center;
+  margin-top: 250px;
+  color: #8e2a15;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #a40a00;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 10px 0 40px;
+  color: #a40a00;
+}
+
+/* ===========================
+   HERO IMAGES 
+=========================== */
+.hero-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 0;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main center image */
+.hero-main-img {
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid #ffffffd0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  position: relative;
+  z-index: 10;
+}
+
+.hero-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Side images */
+.side-img {
+  position: absolute;
+  width: 130px;
+  height: 180px;
+  border-radius: 30px;
+  overflow: hidden;
+  top: 25%;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.side-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-img.left {
+  left: -40px;
+}
+
+.side-img.right {
+  right: -40px;
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+.about-section {
+  margin-top: 150px;
+  padding: 50px 5%;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.about-text {
+  width: 50%;
+  color: #8e2a15;
+}
+
+.about-text h1 {
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.read-more-btn {
+  background: #8e2a15;
+  padding: 13px 30px;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.about-sign {
+  margin-top: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.about-sign .line {
+  height: 4px;
+  width: 60px;
+  background: #8e2a15;
+}
+
+.about-images {
+  width: 50%;
+  position: relative;
+}
+
+.about-main-img {
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-small-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  position: absolute;
+  right: -50px;
+  bottom: -40px;
+
+  border: 12px solid #fff;
+}
+
+/* ===========================
+   CONTENT SECTION (MENU)
+=========================== */
+.content-wrapper {
+  margin-top: 120px;
+  padding: 50px 5%;
+}
+
+.content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e9652b;
+  padding: 40px;
+  border-radius: 25px;
+}
+
+.content-text {
+  width: 55%;
+  color: #fff;
+}
+
+.content-text h2 {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.content-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.read-btn {
+  padding: 12px 28px;
+  background: #d6f6d0;
+  color: #8b2c14;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+}
+
+/* Circle */
+.content-img-circle {
+  position: relative;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.img-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-label {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #d6f6d0;
+  padding: 10px 35px;
+  border-radius: 40px;
+
+  font-size: 14px;
+  color: #8e2a15;
+
+  white-space: nowrap;
+}
+
+/* Middle image */
+.content-img-middle {
+  width: 300px;
+  height: 120px;
+  margin: -60px auto 0;
+
+  border-radius: 120px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Bottom row */
+.content-bottom {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.content-img-large-circle {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #fff;
+}
+
+.content-bottom-text {
+  width: 55%;
+  color: #8b2c14;
+  position: relative;
+  top: -100px;
+}
+
+/* =============================
+   THAI TEA LAYOUT (Tony version)
+============================= */
+
+.thai-tea-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 5%;
+  gap: 60px;
+  position: relative;
+  background: #ffe8df;
+}
+
+.thai-tea-left {
+  width: 45%;
+  color: #8e2a15;
+}
+
+.thai-tea-left h1 {
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.thai-tea-left p {
+  font-size: 20px;
+  line-height: 1.7;
+  width: 90%;
+  text-align: justify;
+}
+
+/* ========== RIGHT IMAGES ========== */
+
+.thai-tea-right {
+  width: 55%;
+  position: relative;
+  height: 600px;
+}
+
+/* ========== วงกลมซ้อนด้านซ้าย ========== */
+
+.tea-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 12px solid #8b2e14;
+  position: absolute;
+  z-index: 5;
+  background: #fff;
+}
+
+.tea-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* วงบน */
+.circle-top {
+  top: 0;
+  left: 30px;
+}
+
+/* วงล่าง */
+.circle-bottom {
+  bottom: 0;
+  left: 0;
+}
+
+/* Label บนวงกลม */
+.tea-label {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d6f6d0;
+  padding: 10px 35px;
+  border-radius: 40px;
+  font-size: 20px;
+  color: #8e2a15;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* ========== รูปใหญ่ขวา ========== */
+
+.tea-big-bg {
+  position: absolute;
+  top: 50px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+
+  border-radius: 260px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tea-big-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Label Thai Ice Tea */
+.tea-label-vertical {
+  position: absolute;
+  top: 50%;
+  right: -90px;
+  transform: translateY(-50%) rotate(90deg);
+  background: #d6f6d0;
+  padding: 18px 40px;
+  border-radius: 40px;
+  font-size: 20px;
+  color: #8e2a15;
+  white-space: nowrap;
+}
+
+/* ===========================
+   CONTACT SECTION
+=========================== */
+.contact-section {
+  background: #ffe8df;
+  padding: 160px 5% 100px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-content h1 {
+  font-size: 60px;
+  color: #8e2a15;
+  font-weight: 800;
+  margin-top: -120px;
+}
+
+.contact-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-70%);
+  width: 320px;
+  height: 520px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 250px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.left-side {
+  left: -160px;
+  background-image: url("img/food-left.jpg");
+}
+
+.right-side {
+  right: -160px;
+  background-image: url("img/food-right.jpg");
+}
+
+.footer-bar {
+  margin-top: 120px;
+  background: #d8572b;
+  padding: 25px 40px;
+  border-radius: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+  font-size: 18px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 26px;
+}
+
+/* ===========================
+   RESPONSIVE SECTION
+=========================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-main-img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .side-img {
+    width: 120px;
+    height: 160px;
+    opacity: 0.4;
+  }
+
+  .side-img.left {
+    left: -20px;
+  }
+
+  .side-img.right {
+    right: -20px;
+  }
+
+  .about-content,
+  .content-bottom,
+  .content-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text,
+  .about-images,
+  .content-text,
+  .content-bottom-text {
+    width: 100%;
+  }
+
+  .thai-tea-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .tea-right {
+    min-height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .hero-main-img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .side-img {
+    opacity: 0.15;
+    width: 100px;
+    height: 140px;
+    top: 35%;
+  }
+
+  .side-img.left {
+    left: -10px;
+  }
+
+  .side-img.right {
+    right: -10px;
+  }
+
+  .tea-img.big,
+  .tea-img.mid {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tea-img.tall {
+    width: 240px;
+    height: 320px;
+  }
+
+  .tea-label.vertical {
+    right: -60px;
+  }
+
+  .about-main-img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .content-img-large-circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  .contact-side {
+    opacity: 0.15;
+    width: 240px;
+    height: 400px;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
