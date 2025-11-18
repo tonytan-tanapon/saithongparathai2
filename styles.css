@@ -1392,3 +1392,20 @@ body {
    FIX — FORCE RISE ANIMATION TO ALWAYS WORK
 ============================================ */
 /* === GLOBAL RISE ANIMATION (MOBILE FRIENDLY) === */
+.rise {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* force animation even on mobile */
+@media (max-width: 600px) {
+  .rise {
+    transform: translateY(40px) !important;
+  }
+}
+
+.rise.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
