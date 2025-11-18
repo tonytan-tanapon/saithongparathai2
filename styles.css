@@ -1095,176 +1095,293 @@ body {
 /* ===============================
    RESPONSIVE — THAI TEA SECTION
 ================================ */
+/* ============================================
+   RESPONSIVE — GLOBAL MOBILE (max-width: 600px)
+============================================ */
+@media (max-width: 600px) {
+  .title {
+    font-size: 48px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  .hero-main-img {
+    width: 260px;
+    height: 260px;
+  }
+  .side-img {
+    opacity: 0.15;
+    width: 100px;
+    height: 140px;
+    top: 35%;
+  }
+  .side-img.left {
+    left: -10px;
+  }
+  .side-img.right {
+    right: -10px;
+  }
+  .about-main-img {
+    width: 300px;
+    height: 300px;
+  }
+  .content-img-large-circle {
+    width: 260px;
+    height: 260px;
+  }
+  .contact-side {
+    opacity: 0.15;
+    width: 240px;
+    height: 400px;
+  }
+  .footer-bar {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 
-/* -------- Tablet -------- */
+/* ============================================
+   ABOUT — TABLET (max-width: 1000px)
+============================================ */
+@media (max-width: 1000px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+  .about-text,
+  .about-images {
+    width: 100%;
+  }
+  .about-text h1 {
+    font-size: 55px;
+  }
+  .about-main-img {
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+  }
+  .about-small-img {
+    width: 210px;
+    height: 210px;
+    right: -20px;
+    bottom: -20px;
+  }
+}
+
+/* ============================================
+   ABOUT — MOBILE (max-width: 600px)
+============================================ */
+@media (max-width: 600px) {
+  .about-section {
+    padding: 40px 6%;
+    margin-top: 80px;
+  }
+  .about-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+  .about-text h1 {
+    font-size: 42px;
+  }
+  .about-main-img {
+    width: 190px;
+    height: 190px;
+    border-width: 8px;
+  }
+  .about-small-img {
+    width: 90px;
+    height: 90px;
+    border-width: 8px;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* ============================================
+   FAMOUS THAI DISHES — TABLET (max-width: 900px)
+============================================ */
+@media (max-width: 900px) {
+  .content-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .content-text {
+    width: 100%;
+  }
+  .content-img-circle {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+  }
+  .content-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content-bottom-text {
+    width: 90%;
+    top: 0;
+  }
+}
+
+/* ============================================
+   FAMOUS THAI DISHES — MOBILE (max-width: 600px)
+============================================ */
+@media (max-width: 600px) {
+  .content-section {
+    margin-top: 60px;
+    padding: 50px 5% 90px;
+  }
+  .content-title {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  /* hide top/bottom round images */
+  .content-top .img-wrapper,
+  .content-bottom .img-wrapper {
+    display: none !important;
+  }
+
+  .content-img-middle {
+    width: 200px;
+    height: 80px;
+    margin: 20px auto 0;
+  }
+
+  .content-bottom-text {
+    width: 100%;
+    top: 0 !important;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   THAI TEA — TABLET (max-width: 900px)
+============================================ */
 @media (max-width: 900px) {
   .thai-tea-inner {
     flex-direction: column;
     text-align: center;
     gap: 40px;
   }
-
   .tea-left {
     width: 90%;
   }
-
   .tea-left h1 {
     font-size: 55px;
   }
-
   .tea-left p {
     width: 100%;
-    font-size: 18px;
   }
-
   .tea-right {
     width: 100%;
     min-height: 380px;
   }
-
-  /* รูป - ลดขนาดลง */
-  .tea-img.big,
-  .tea-img.mid {
-    width: 170px;
-    height: 170px;
-  }
-
-  .tea-img.tall {
-    width: 300px;
-    height: 400px;
-    right: 80px;
-  }
-
-  /* label */
-  .tea-label {
-    padding: 10px 25px;
-    font-size: 16px;
-  }
-
-  .tea-label.vertical {
-    right: -65px;
-    font-size: 16px;
-  }
 }
 
-/* ========== THAI TEA — RESPONSIVE MOBILE FIX 100% ========== */
+/* ==========================================================
+   THAI TEA — MOBILE (tall อยู่ตรงกลาง)
+========================================================== */
 @media (max-width: 600px) {
-  .thai-tea-inner {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  /* ให้รูป 3 ตัวเรียงแนวนอน */
+  /* ========= ให้ทั้งแถวยืดได้และจัดเรียงซ้าย-กลาง-ขวา ========= */
   .tea-right {
-    width: 100%;
-    display: flex;
-    flex-direction: row; /* ← เรียงแนวนอน */
-    justify-content: center;
-    align-items: flex-start;
-    gap: 18px;
-    margin-top: 20px;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-top: 20px !important;
   }
 
-  /* รีเซ็ต absolute ทั้งหมด → ให้กลายเป็น block ปกติ */
+  /* reset absolute */
   .tea-wrapper,
   .tea-big,
   .tea-mid,
   .tea-tall {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    margin: 0; /* ไม่มีขยับซ้าย/ขวา */
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
   }
 
-  /* ขนาดรูปให้บาลานซ์พอดีบนมือถือ */
-  .tea-img.big,
-  .tea-img.mid {
-    width: 110px;
-    height: 110px;
-    border-width: 8px;
+  /* ========= บังคับ order ========= */
+  .tea-big {
+    order: 1 !important;
+  }
+  .tea-tall {
+    order: 2 !important;
+  } /* 🔥 อยู่กลาง */
+  .tea-mid {
+    order: 3 !important;
   }
 
+  /* ========= ปรับขนาดรูป ========= */
+
+  /* big (ซ้าย) */
+  .tea-img.big {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 50% !important;
+    border-width: 6px !important;
+  }
+
+  /* tall (กลาง) */
   .tea-img.tall {
-    width: 140px;
-    height: 200px;
-    border-radius: 30px;
+    width: 110px !important;
+    height: 170px !important;
+    border-radius: 24px !important;
   }
 
-  /* label ใต้รูปทุกตัว */
-  .tea-label {
+  /* mid (ขวา) */
+  .tea-img.mid {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 50% !important;
+    border-width: 6px !important;
+  }
+
+  /* ========= label ใต้รูปทุกตัว ========= */
+  .tea-label,
+  .tea-label.vertical {
     position: static !important;
     transform: none !important;
-    margin-top: 8px;
-    display: block;
-  }
-
-  /* vertical แก้ให้เป็นแนวนอน */
-  .tea-label.vertical {
     rotate: 0deg !important;
+    margin-top: 8px !important;
+    display: block !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    padding: 6px 12px !important;
   }
 }
 
-/* ==== FUN BUTTON ANIMATION (BOUNCE) ==== */
-.fun-click {
-  transition: transform 0.2s ease;
-}
-
-.fun-click:active {
-  transform: scale(0.88) rotate(-2deg);
-}
-
-/* ============ RISE ANIMATION ============ */
-.rise {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.rise.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* ============================================
+   CONTACT — MOBILE (max-width: 600px)
+============================================ */
 @media (max-width: 600px) {
   .contact-section {
     padding: 120px 5% 80px;
   }
-
-  /* ย้ายตำแหน่งรูปไม่ให้เกย */
   .contact-side {
     top: 20%;
-    transform: translateY(0);
+    transform: none;
     width: 180px;
     height: 280px;
-    opacity: 0.18; /* ป้องกันแย่ง focal point */
+    opacity: 0.18;
   }
-
   .left-side {
     left: -80px;
   }
-
   .right-side {
     right: -80px;
   }
-
-  /* ปรับ text */
   .contact-content h1 {
     font-size: 42px;
     margin-top: 0;
   }
-
-  .hours h3 {
-    font-size: 18px;
-  }
-
-  .hours p {
-    font-size: 16px;
-  }
-
-  /* footer เรียงแนวตั้ง */
   .footer-bar {
     flex-direction: column;
     gap: 20px;
