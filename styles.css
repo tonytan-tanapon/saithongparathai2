@@ -745,10 +745,10 @@ body {
    ============================ */
 .contact-side {
   position: absolute;
-  top: -5%;
+  top: 40%;
   transform: translateY(-45%);
-  width: 340px;
-  height: 540px;
+  width: 240px;
+  height: 440px;
   background-size: cover;
   background-position: center;
   border-radius: 260px;
@@ -759,13 +759,13 @@ body {
 
 /* LEFT IMAGE */
 .left-side {
-  left: -160px;
+  left: -120px;
   background-image: url("img/food-left.jpg"); /* เปลี่ยน path */
 }
 
 /* RIGHT IMAGE */
 .right-side {
-  right: -160px;
+  right: -120px;
   background-image: url("img/food-right.jpg"); /* เปลี่ยน path */
 }
 
