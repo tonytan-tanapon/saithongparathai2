@@ -635,19 +635,19 @@ body {
 .tea-big,
 .tea-big {
   top: 40px;
-  left: 0px;
+  left: -100px;
   z-index: 20; /* เพิ่มจากเดิม 10 → 20 */
 }
 
 .tea-mid {
-  bottom: 20px;
-  left: 0px;
+  bottom: -70px;
+  left: -100px;
   z-index: 10; /* อยู่กลาง */
 }
 
 .tea-tall {
   top: 60px;
-  right: 240px;
+  right: 200px;
   z-index: 1; /* อยู่หลังสุด */
 }
 
@@ -760,13 +760,13 @@ body {
 /* LEFT IMAGE */
 .left-side {
   left: -120px;
-  background-image: url("img/food-left.jpg"); /* เปลี่ยน path */
+  background-image: url("img/page5/food-left.png"); /* เปลี่ยน path */
 }
 
 /* RIGHT IMAGE */
 .right-side {
   right: -120px;
-  background-image: url("img/food-right.jpg"); /* เปลี่ยน path */
+  background-image: url("img/page5/food-right.png"); /* เปลี่ยน path */
 }
 
 /* ============================
