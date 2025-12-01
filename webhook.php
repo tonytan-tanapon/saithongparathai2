@@ -8,7 +8,7 @@ error_log("RECEIVED: " . $input);
 // =======================
 // 💬 ส่งข้อความ (Push Message) ไปยัง LINE chat
 // =======================
-$accessToken = QwkhmeW5/XhOlWWY4ZaXueRYo9NxvCoU9A7fO4XxFw4f5lBZdoODXaUdmYEH3htQi7zzG+EclPjqyQl9WdRSWP6YTNPONKhXPpc//vl76cbAefExvKXoSlP8AYfDCwfObIv+Vrg/x1SK93y59piIdAdB04t89/1O/w1cDnyilFU=";
+$accessToken = "QwkhmeW5/XhOlWWY4ZaXueRYo9NxvCoU9A7fO4XxFw4f5lBZdoODXaUdmYEH3htQi7zzG+EclPjqyQl9WdRSWP6YTNPONKhXPpc//vl76cbAefExvKXoSlP8AYfDCwfObIv+Vrg/x1SK93y59piIdAdB04t89/1O/w1cDnyilFU=";
 $userId = "U07753617368febe0b8a358f2caf23650"; // ✅ user ของคุณ
 
 
