@@ -71,7 +71,7 @@ if ($replyToken) {
         "messages" => [
             [
                 "type" => "text",
-                "text" => "✅ Saved to DB!\nSender: $lineUid\nType: $sourceType\nMsg: $messageText 🚀"
+                "text" => "✅ บันทึกลง database แล้ว! ข้อความที่ได้รับคือ: $messageText 🚀"
             ]
         ]
     ];
