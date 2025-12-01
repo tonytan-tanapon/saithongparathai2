@@ -9,8 +9,9 @@ app.post("/webhook", async (req, res) => {
   console.log("📥 Webhook received:", req.body);
 
   // ====== LINE Push Message demo ======
-  const lineToken = "ใส่ Channel Access Token ของนายที่ LINE console";
-  const lineUser = "ใส่ LINE User/Group ID ที่จะส่งไป";
+  const lineToken =
+    "QwkhmeW5/XhOlWWY4ZaXueRYo9NxvCoU9A7fO4XxFw4f5lBZdoODXaUdmYEH3htQi7zzG+EclPjqyQl9WdRSWP6YTNPONKhXPpc//vl76cbAefExvKXoSlP8AYfDCwfObIv+Vrg/x1SK93y59piIdAdB04t89/1O/w1cDnyilFU=";
+  const lineUser = "U07753617368febe0b8a358f2caf23650";
 
   await fetch("https://api.line.me/v2/bot/message/push", {
     method: "POST",
