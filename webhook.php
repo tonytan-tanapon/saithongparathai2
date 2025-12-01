@@ -1,40 +1,67 @@
 <?php
 http_response_code(200);
 
-// รับ webhook จาก LINE (log เผื่อ debug)
+// รับ LINE webhook JSON
 $input = file_get_contents("php://input");
 error_log("RECEIVED: " . $input);
 
-// =======================
-// 💬 ส่งข้อความ (Push Message) ไปยัง LINE chat
-// =======================
-$accessToken = "QwkhmeW5/XhOlWWY4ZaXueRYo9NxvCoU9A7fO4XxFw4f5lBZdoODXaUdmYEH3htQi7zzG+EclPjqyQl9WdRSWP6YTNPONKhXPpc//vl76cbAefExvKXoSlP8AYfDCwfObIv+Vrg/x1SK93y59piIdAdB04t89/1O/w1cDnyilFU=";
-$userId = "U07753617368febe0b8a358f2caf23650"; // ✅ user ของคุณ
+// decode JSON
+$data = json_decode($input, true);
+if (!isset($data['events'][0])) {
+    echo "No events"; 
+    exit;
+}
+
+// ดึงข้อมูลจาก event แรก
+$event = $data['events'][0];
+$lineUid = $event['source']['userId'] ?? null;
+$sourceType = $event['source']['type'] ?? $event['source']['type'] ?? 'user';
+$sourceId = $event['source']['groupId'] ?? ($event['source']['roomId'] ?? null);
+$msgType = $event['message']['type'] ?? 'unknown';
+$messageText = $event['message']['text'] ?? null;
+$eventTs = $event['timestamp'] ?? 0;
+
+// ------------ Connect MySQL ------------
+$conn = new mysqli(
+    "srv577.hstgr.io",
+    "u164091347_admin",   // 👈 เปลี่ยนเป็นของคุณ
+    "4aA#IZLN1",   // 👈 เปลี่ยนเป็นของคุณ
+    "u164091347_db_master"
+);
 
 
-$messageData = [
-    "to" => $userId,
-    "messages" => [
-        [
-            "type" => "text",
-            "text" => "hello from Tony 🔥"
-        ]
-    ]
-];
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://api.line.me/v2/bot/message/push");
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Content-Type: application/json",
-    "Authorization: Bearer " . $accessToken
-]);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($messageData));
+if ($conn->connect_error) {
+    error_log("DB Connect Error: " . $conn->connect_error);
+    echo "DB connection failed";
+    exit;
+}
 
-$response = curl_exec($ch);
-curl_close($ch);
+// Insert SQL (Hybrid: relational + raw JSON)
+$stmt = $conn->prepare(
+    "INSERT INTO line_messages
+    (line_uid, source_type, source_id, msg_type, message, event_ts, raw_payload)
+    VALUES (?, ?, ?, ?, ?, ?, ?)"
+);
 
-// ส่ง webhook response back ไปที่ LINE Developer Console
-echo "hello"; // 👈 ไม่เกี่ยวกับข้อความที่ส่งเข้าห้องแชท
-?>
+$jsonPayload = json_encode($event, JSON_UNESCAPED_UNICODE); // เก็บทั้ง events[].message object
+$stmt->bind_param(
+    "sssssis",
+    $lineUid,
+    $sourceType,
+    $sourceId,
+    $msgType,
+    $messageText,
+    $eventTs,
+    $jsonPayload
+);
+
+$stmt->execute();
+if ($stmt->error) {
+    error_log("INSERT ERROR: " . $stmt->error);
+}
+
+$stmt->close();
+$conn->close();
+
+echo "OK";
