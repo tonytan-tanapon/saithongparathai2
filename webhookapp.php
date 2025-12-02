@@ -1,4 +1,5 @@
 <?php
+http_response_code(200);
 // รับข้อมูลจาก LINE
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
