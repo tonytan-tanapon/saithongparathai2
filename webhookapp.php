@@ -35,7 +35,7 @@ curl_close($ch);
 // ---------------------------------------------------------
 // ส่งข้อมูลต่อไป Apps Script แบบ POST + JSON
 // ---------------------------------------------------------
-$script_url = "https://script.google.com/macros/s/AKfycbxaljimVep8oA7QSq5vnJ6jch8t4hOg4hAADO13RsLAT6E3crJuNgiLD1qggpJOK-yH8Q/exec";
+$script_url = "https://script.google.com/macros/s/AKfycbw_-z-2Z9w2l-D3RrXOsqlIL82oxkFYIXiYSoXj1LqVg2iLyFqpuODd8boGxccuUQUdXQ/exec";
 
 $ch = curl_init($script_url);
 curl_setopt($ch, CURLOPT_POST, true);
