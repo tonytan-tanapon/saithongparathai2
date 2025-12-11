@@ -1412,11 +1412,11 @@ body {
 
 .order-btn {
   background: linear-gradient(135deg, #d14900, #a83700);
-  padding: 12px 28px;
+  padding: 5px 27px;
   border-radius: 40px;
   color: white;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   font-family: "League Spartan", sans-serif;
 
