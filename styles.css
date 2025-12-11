@@ -47,8 +47,8 @@ body {
 /* ===== Menu ===== */
 .nav-menu {
   display: flex;
-  gap: 20px;
-  margin-right: 10px; /* เว้นห่างก่อนถึงปุ่ม */
+  gap: 30px;
+  margin-right: 20px; /* เว้นห่างก่อนถึงปุ่ม */
 }
 
 .nav-menu a {
@@ -1412,7 +1412,7 @@ body {
 
 .order-btn {
   background: linear-gradient(135deg, #d14900, #a83700);
-  padding: 5px 27px;
+  padding: 8px 28px;
   border-radius: 40px;
   color: white;
   font-weight: 700;
