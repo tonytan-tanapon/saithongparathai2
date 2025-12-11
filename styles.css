@@ -48,7 +48,7 @@ body {
 .nav-menu {
   display: flex;
   gap: 20px;
-  margin-right: 20px; /* เว้นห่างก่อนถึงปุ่ม */
+  margin-right: 10px; /* เว้นห่างก่อนถึงปุ่ม */
 }
 
 .nav-menu a {
